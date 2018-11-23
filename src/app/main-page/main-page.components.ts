@@ -3,9 +3,7 @@ import {Component, OnInit} from '@angular/core';
 
 @Component({
     selector: 'main-page',
-    template: `
-      <div>main-page</div>
-    `
+    templateUrl: './main-page.component.html',
 })
 export class MainPageComponent implements OnInit {
     constructor() {
