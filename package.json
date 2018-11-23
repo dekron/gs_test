@@ -2,7 +2,7 @@
   "name": "test",
   "version": "0.0.1",
   "scripts": {
-    "dev": "webpack-dev-server --hot",
+    "dev": "webpack-dev-server",
     "build": "webpack"
   },
   "dependencies": {
@@ -13,6 +13,7 @@
     "@angular/core": "^6.0.0",
     "@angular/elements": "^6.0.0",
     "@angular/forms": "^6.0.0",
+    "@angular/material": "^6.4.7",
     "@angular/platform-browser": "^6.0.0",
     "@angular/platform-browser-dynamic": "^6.0.0",
     "@angular/platform-server": "^6.0.0",

@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   entry: {
+    'styles': './src/styles.css',
     'polyfills': './src/polyfills.ts',
     'app': './src/main.ts'
   },
