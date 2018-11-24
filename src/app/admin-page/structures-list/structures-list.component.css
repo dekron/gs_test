@@ -22,6 +22,12 @@
 .structures-list__table {
   width: 100%;
 }
+.structures-list__table .mat-row{
+  cursor: pointer;
+}
+.structures-list__table .mat-row:hover{
+  background-color: #eeeeee;
+}
 
 .structures-list__row-cell.not-active{
   color: red;

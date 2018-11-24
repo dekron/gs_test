@@ -1,0 +1,26 @@
+.mat-card-actions {
+  margin: 0;
+}
+
+.structures-list__title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.structures-edit__fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.structures-edit__fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.structures-edit__fields > *{
+  width: 30%;
+}
+
+.structures-edit__buttons button {
+  margin-right: 8px;
+}

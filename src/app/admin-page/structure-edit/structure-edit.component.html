@@ -1,0 +1,25 @@
+<form class="form" name="structureForm" [formGroup]="structureForm">
+  <mat-card class="structures-edit">
+    <mat-card-header>
+      <mat-card-title class="structures-list__title">{{id ? 'Редактирование структуры' : 'Новая структура'}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="structures-edit__fields">
+      <mat-form-field>
+        <input matInput placeholder="Название" [(ngModel)]="structure.name" formControlName="name" required>
+        <mat-error *ngIf="structureForm.controls.name.invalid">{{getNameErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="Шаблон размещения" [(ngModel)]="structure.template" formControlName="template" required>
+          <mat-option value="0">Шаблон 1</mat-option>
+          <mat-option value="1">Шаблон 2</mat-option>
+        </mat-select>
+        <mat-error *ngIf="structureForm.controls.template.invalid">{{getTemplateErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions class="structures-edit__buttons">
+      <button mat-raised-button type="button" routerLink="/admin-page">Отмена</button>
+      <button mat-raised-button color="primary" type="button" (click)="saveStructure()" [disabled]="structureForm.invalid">Сохранить</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
+
