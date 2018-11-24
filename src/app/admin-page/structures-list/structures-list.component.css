@@ -1,0 +1,33 @@
+.structures-list {
+
+}
+
+.mat-card-actions {
+  margin: 0;
+}
+
+.structures-list__title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.structures-list__buttons button {
+  margin-right: 8px;
+}
+
+.structures-list__buttons-btn {
+  background-color: #1c8021;
+}
+
+.structures-list__table {
+  width: 100%;
+}
+
+.structures-list__row-cell.not-active{
+  color: red;
+}
+
+.structures-list__row-cell.active{
+  color: green;
+}
+

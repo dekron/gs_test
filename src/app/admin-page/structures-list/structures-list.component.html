@@ -1,0 +1,41 @@
+<mat-card class="structures-list">
+  <mat-card-header>
+    <mat-card-title class="structures-list__title">Список структур</mat-card-title>
+  </mat-card-header>
+  <mat-card-actions class="structures-list__buttons">
+    <button mat-raised-button color="primary">Добавить</button>
+    <button mat-raised-button color="warn" [disabled]="!selection.hasValue()">Удалить</button>
+    <button mat-raised-button color="warn" class="structures-list__buttons-btn" [disabled]="selection.selected.length !== 1">Активировать</button>
+    <button mat-raised-button color="accent" [disabled]="!selection.hasValue()">Деактивировать</button>
+  </mat-card-actions>
+  <mat-card-content>
+    <table mat-table [dataSource]="dataSource" class="structures-list__table">
+      <!-- Checkbox Column -->
+      <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef>
+          <mat-checkbox (change)="$event ? masterToggle() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()">
+          </mat-checkbox>
+        </th>
+        <td width="50" mat-cell *matCellDef="let row">
+          <mat-checkbox (click)="$event.stopPropagation()"
+                        (change)="$event ? selection.toggle(row) : null"
+                        [checked]="selection.isSelected(row)">
+          </mat-checkbox>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Название</th>
+        <td mat-cell *matCellDef="let element">{{element.position}}. {{element.name}}</td>
+      </ng-container>
+      <ng-container matColumnDef="active">
+        <th mat-header-cell *matHeaderCellDef>Активность</th>
+        <td mat-cell *matCellDef="let element" class="mat-cell structures-list__row-cell {{element.active ? 'active' : 'not-active'}}">{{element.active ? 'Активен' : 'Не активен'}}
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </mat-card-content>
+</mat-card>
