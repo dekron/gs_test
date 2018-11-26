@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {LocalStorageService} from "../../services/local-storage/local-storage.service";
+import {LocalStorageService} from "../../../services/local-storage/local-storage.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {StructureElement} from "../../models/structure-element.model";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
@@ -11,17 +10,12 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 
 export class StructuresEditComponent implements OnInit {
+    id: number;
     structureForm: FormGroup = new FormGroup({
-        name: new FormControl('', [Validators.required, Validators.min(3)]),
+        active: new FormControl(''),
+        name: new FormControl('', [Validators.required, Validators.minLength(3)]),
         template: new FormControl('', [Validators.required])
     });
-
-    id: number;
-    structure: StructureElement = {
-        active: false,
-        name: '',
-        template: null
-    };
 
     constructor(private storageService: LocalStorageService, private route: ActivatedRoute, private router: Router) {
     }
@@ -31,7 +25,7 @@ export class StructuresEditComponent implements OnInit {
         this.route.params.subscribe(params => {
             if (params.id) {
                 this.id = params.id;
-                this.structure = data[this.id];
+                this.structureForm.setValue(data[this.id]);
             }
         });
     }
@@ -39,9 +33,9 @@ export class StructuresEditComponent implements OnInit {
     saveStructure(): void {
         let data = this.storageService.getItem('structure_data');
         if (this.id) {
-            data.splice(this.id, 1, this.structure);
+            data.splice(this.id, 1, this.structureForm.getRawValue());
         } else {
-            data.push(this.structure);
+            data.push(this.structureForm.getRawValue());
         }
         this.storageService.setItem('structure_data', data);
         this.router.navigateByUrl('/admin-page');
@@ -49,7 +43,7 @@ export class StructuresEditComponent implements OnInit {
 
     getNameErrorMessage() {
         return this.structureForm.controls.name.hasError('required') ? 'Вы должны ввести значение' :
-            this.structureForm.controls.name.hasError('min') ? 'Минимальное количество символов 3' :
+            this.structureForm.controls.name.hasError('minlength') ? 'Минимальное количество символов 3' :
                 '';
     }
 

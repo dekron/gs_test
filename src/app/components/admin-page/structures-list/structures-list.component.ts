@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {SelectionModel} from "@angular/cdk/collections";
 import {MatTableDataSource} from "@angular/material";
-import {LocalStorageService} from "../../services/local-storage/local-storage.service";
-import {StructureElement} from "../../models/structure-element.model";
+import {LocalStorageService} from "../../../services/local-storage/local-storage.service";
+import {StructureElement} from "../../../models/structure-element.model";
 
 @Component({
     selector: 'structures-list',

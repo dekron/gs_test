@@ -5,11 +5,11 @@
     </mat-card-header>
     <mat-card-content class="structures-edit__fields">
       <mat-form-field>
-        <input matInput placeholder="Название" [(ngModel)]="structure.name" formControlName="name" required>
+        <input matInput placeholder="Название" formControlName="name" required>
         <mat-error *ngIf="structureForm.controls.name.invalid">{{getNameErrorMessage()}}</mat-error>
       </mat-form-field>
       <mat-form-field>
-        <mat-select placeholder="Шаблон размещения" [(ngModel)]="structure.template" formControlName="template" required>
+        <mat-select placeholder="Шаблон размещения" formControlName="template" required>
           <mat-option value="0">Шаблон 1</mat-option>
           <mat-option value="1">Шаблон 2</mat-option>
         </mat-select>
