@@ -3,10 +3,11 @@ import {Connection, FormatData, Source} from "../../../../models/structure-eleme
 import {SourceService} from "../../../../services/source/source.service";
 
 @Component({
-    templateUrl: './block-number.component.html',
+    templateUrl: './block-graph.component.html',
 })
-export class BlockNumberComponent {
+export class BlockGraphComponent {
     value: number;
+    timestamp: number;
     connection: Connection;
 
     constructor(private sourceService: SourceService) {
@@ -18,6 +19,7 @@ export class BlockNumberComponent {
         this.connection.connection.addEventListener('message', (message) => {
             let data = JSON.parse(message.data) as FormatData;
             _this.value = data.value;
+            _this.timestamp = data.timestamp;
         })
     }
 }

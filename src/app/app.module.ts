@@ -26,6 +26,8 @@ import {StructuresEditComponent} from "./components/admin-page/structure-edit/st
 import {SourceService} from "./services/source/source.service";
 import {TemplateTwoToOneComponent} from "./components/partial/template/template-two-to-one/template-two-to-one.component";
 import {BlockNumberComponent} from "./components/partial/blocks/blocks-number/block-number.component";
+import {BlockTableComponent} from "./components/partial/blocks/blocks-table/block-table.component";
+import {BlockGraphComponent} from "./components/partial/blocks/blocks-graph/block-graph.component";
 
 const appRoutes: Routes = [
     {path: '', component: MainPageComponent},
@@ -57,7 +59,7 @@ const appRoutes: Routes = [
         MainPageComponent,
         AdminPageComponent, StructuresListComponent, StructuresEditComponent,
         TemplateTwoToOneComponent,
-        BlockNumberComponent,
+        BlockNumberComponent, BlockGraphComponent, BlockTableComponent,
         PageNotFoundComponent
     ],
     bootstrap: [AppComponent],
@@ -65,7 +67,7 @@ const appRoutes: Routes = [
         LocalStorageService,
         SourceService
     ],
-    entryComponents: [BlockNumberComponent,
+    entryComponents: [BlockNumberComponent, BlockGraphComponent, BlockTableComponent,
     ]
 })
 export class AppModule {

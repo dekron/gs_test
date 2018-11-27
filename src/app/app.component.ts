@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
         let sourceList: Source[] = [
             {
                 id: 1,
-                name: 'WebSoсket два знака после запятой',
+                name: 'WebSoсket три знака после запятой',
                 type: SourceType.ws,
                 url: 'ws://echo.websocket.org'
             },
@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
             },
             {
                 id: 3,
-                name: 'WebSoсket целые от 100 до 1000',
+                name: 'WebSoсket целые от 10 до 1000',
                 type: SourceType.ws,
                 url: 'ws://echo.websocket.org'
             }

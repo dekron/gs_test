@@ -28,11 +28,11 @@ export class TemplateTwoToOneComponent implements OnInit {
             },
             {
                 source: 2,
-                type: BlockType.number
+                type: BlockType.graph
             },
             {
-                source: 3,
-                type: BlockType.number
+                source: 2,
+                type: BlockType.table
             }
         ];
 
