@@ -12,15 +12,19 @@
   flex-direction: column;
 }
 
-.structures-edit__fields {
-  display: flex;
-  flex-direction: column;
-}
-
 .structures-edit__fields > *{
   width: 30%;
 }
 
 .structures-edit__buttons button {
   margin-right: 8px;
+}
+
+.form-blocks .form-blocks__source{
+  margin-left: 10px;
+}
+
+.mat-icon-button {
+  width: 30px;
+  height: 30px;
 }

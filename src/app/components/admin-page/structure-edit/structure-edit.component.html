@@ -1,4 +1,4 @@
-<form class="form" name="structureForm" [formGroup]="structureForm">
+<form class="structures-edit__form" name="structureForm" [formGroup]="structureForm">
   <mat-card class="structures-edit">
     <mat-card-header>
       <mat-card-title class="structures-list__title">{{id ? 'Редактирование структуры' : 'Новая структура'}}</mat-card-title>
@@ -15,6 +15,34 @@
         </mat-select>
         <mat-error *ngIf="structureForm.controls.template.invalid">{{getTemplateErrorMessage()}}</mat-error>
       </mat-form-field>
+      <mat-label>Блоки</mat-label>
+      <div required formArrayName="blocks" class="form-blocks"
+           *ngFor="let blockGroup of structureForm.get('blocks').controls; let i = index;">
+        <div [formGroupName]="i">
+          <mat-form-field>
+            <mat-label>Блок {{i + 1}}</mat-label>
+            <mat-select formControlName="type">
+              <mat-option value="number">Блок с числом</mat-option>
+              <mat-option value="graph">Блок с графиком</mat-option>
+              <mat-option value="table">Блок с таблицей</mat-option>
+            </mat-select>
+            <mat-error *ngIf="blockGroup.controls.type.invalid">{{getBlocksErrorMessage(blockGroup.controls.type)}}
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="form-blocks__source">
+            <mat-label>Источник</mat-label>
+            <mat-select formControlName="source" >
+              <mat-option value="{{source.id}}" *ngFor="let source of sourceList; let sourceIndex = index;">{{source.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button mat-icon-button *ngIf="i > 0" (click)="removeBlock(i)">
+            <mat-icon aria-label="icon-button with a remove icon">remove</mat-icon>
+          </button>
+        </div>
+      </div>
+      <button mat-raised-button color="primary" [disabled]="structureForm.get('blocks').controls.length > 2"
+              (click)="addBlock()">Добавить блок
+      </button>
     </mat-card-content>
     <mat-card-actions class="structures-edit__buttons">
       <button mat-raised-button type="button" routerLink="/admin-page">Отмена</button>
