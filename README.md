@@ -47,6 +47,9 @@ git clone https://github.com/dekron/gs_test.git
 # переходим в папку с проектом
 cd gs_test
 
+# устанавливаем зависимости
+npm install
+
 # запускаем сервер для разработки по адресу localhost:8080
 npm run dev
 
