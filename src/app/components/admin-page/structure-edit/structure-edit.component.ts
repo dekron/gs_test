@@ -47,7 +47,7 @@ export class StructuresEditComponent implements OnInit {
             data.push(this.structureForm.getRawValue());
         }
         this.storageService.setItem('structure_data', data);
-        this.router.navigateByUrl('/admin-page');
+        this.router.navigateByUrl('/admin');
     }
 
     getNameErrorMessage() {

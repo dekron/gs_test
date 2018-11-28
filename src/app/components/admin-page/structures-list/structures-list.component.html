@@ -3,7 +3,7 @@
     <mat-card-title class="structures-list__title">Список структур</mat-card-title>
   </mat-card-header>
   <mat-card-actions class="structures-list__buttons">
-    <button mat-raised-button color="primary" routerLink="/admin-page/structure/add">Добавить</button>
+    <button mat-raised-button color="primary" routerLink="/admin/structure/add">Добавить</button>
     <button mat-raised-button color="warn" [disabled]="!selection.hasValue()" (click)="deleteStructure(selection.selected)">Удалить</button>
     <button mat-raised-button color="warn" class="structures-list__buttons-btn" [disabled]="selection.selected.length !== 1" (click)="activateStructure(selection.selected[0])">Активировать</button>
     <button mat-raised-button color="accent" [disabled]="!selection.hasValue()" (click)="deactivateStructure(selection.selected)">Деактивировать</button>
@@ -35,7 +35,7 @@
         </td>
       </ng-container>
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let element; columns: displayedColumns;" routerLink="/admin-page/structure/{{dataSource.data.indexOf(element)}}"></tr>
+      <tr mat-row *matRowDef="let element; columns: displayedColumns;" routerLink="/admin/structure/{{dataSource.data.indexOf(element)}}"></tr>
     </table>
   </mat-card-content>
 </mat-card>

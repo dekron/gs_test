@@ -33,7 +33,7 @@ import {TemplateOneToTwoComponent} from "./components/partial/template/template-
 
 const appRoutes: Routes = [
     {path: '', component: MainPageComponent},
-    {path: 'admin-page', component: AdminPageComponent,
+    {path: 'admin', component: AdminPageComponent,
         children: [
             { path: '', component: StructuresListComponent },
             { path: 'structure/add', component: StructuresEditComponent },
