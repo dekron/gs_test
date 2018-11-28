@@ -1,0 +1,16 @@
+.template-three-in-one {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Column Gap */
+.template-three-in-one > * {
+  box-sizing: border-box;
+}
+
+/* Item sizing */
+.template-three-in-one .row-item {
+  flex: 0 1 calc(33.3% - 32px);
+}

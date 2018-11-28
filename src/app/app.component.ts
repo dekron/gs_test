@@ -71,7 +71,7 @@ export class AppComponent implements OnInit {
                     connection.connection.send(JSON.stringify(data));
 
                 }
-            }, 500);
+            }, 2000);
         });
     }
 }

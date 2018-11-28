@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Connection, FormatData, Source, SourceType} from "../../models/structure-element.model";
+import {Connection, Source, SourceType} from "../../models/structure-element.model";
 
 @Injectable()
 export class SourceService {

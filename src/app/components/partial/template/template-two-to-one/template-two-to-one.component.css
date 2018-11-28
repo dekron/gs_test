@@ -1,0 +1,22 @@
+.template-two-to-one {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Column Gap */
+.template-two-to-one > * {
+  box-sizing: border-box;
+}
+
+/* Item sizing */
+.template-two-to-one .row-item {
+  flex: 0 1 calc(50% - 32px);
+  margin-bottom: 10px;
+}
+
+.template-two-to-one .last-item {
+  flex: 0 1 calc(100% - 64px);
+}
+

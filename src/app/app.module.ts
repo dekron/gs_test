@@ -24,10 +24,12 @@ import {StructuresListComponent} from "./components/admin-page/structures-list/s
 import {LocalStorageService} from './services/local-storage/local-storage.service';
 import {StructuresEditComponent} from "./components/admin-page/structure-edit/structure-edit.component";
 import {SourceService} from "./services/source/source.service";
-import {TemplateTwoToOneComponent} from "./components/partial/template/template-two-to-one/template-two-to-one.component";
 import {BlockNumberComponent} from "./components/partial/blocks/blocks-number/block-number.component";
 import {BlockTableComponent} from "./components/partial/blocks/blocks-table/block-table.component";
 import {BlockGraphComponent} from "./components/partial/blocks/blocks-graph/block-graph.component";
+import {TemplateTwoToOneComponent} from "./components/partial/template/template-two-to-one/template-two-to-one.component";
+import {TemplateThreeInOneComponent} from "./components/partial/template/template-three-in-one/template-three-in-one.component";
+import {TemplateOneToTwoComponent} from "./components/partial/template/template-one-to-two/template-one-to-two.component";
 
 const appRoutes: Routes = [
     {path: '', component: MainPageComponent},
@@ -52,22 +54,25 @@ const appRoutes: Routes = [
         MatInputModule,
         BrowserAnimationsModule,
         MatSelectModule,
+        BrowserModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(appRoutes)
+    ],
 
-        BrowserModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(appRoutes)],
     declarations: [
         AppComponent,
         MainPageComponent,
         AdminPageComponent, StructuresListComponent, StructuresEditComponent,
-        TemplateTwoToOneComponent,
+        TemplateTwoToOneComponent, TemplateThreeInOneComponent, TemplateOneToTwoComponent,
         BlockNumberComponent, BlockGraphComponent, BlockTableComponent,
         PageNotFoundComponent
     ],
     bootstrap: [AppComponent],
     providers: [
         LocalStorageService,
-        SourceService
+        SourceService,
+
     ],
     entryComponents: [BlockNumberComponent, BlockGraphComponent, BlockTableComponent,
+        TemplateTwoToOneComponent, TemplateThreeInOneComponent, TemplateOneToTwoComponent
     ]
 })
 export class AppModule {

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {LocalStorageService} from "../../../services/local-storage/local-storage.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {Block, BlockType, Source} from "../../../models/structure-element.model";
+import {Source} from "../../../models/structure-element.model";
 
 @Component({
     selector: 'structure-edit',
@@ -31,7 +31,7 @@ export class StructuresEditComponent implements OnInit {
                 this.id = params.id;
                 let bindFormData = structureData[this.id];
                 let blocks = this.structureForm.get('blocks') as FormArray;
-                for (var i = 0; i < bindFormData.blocks.length - 1; i++) {
+                for (let i = 0; i < bindFormData.blocks.length - 1; i++) {
                     blocks.push(this._createBlockRow());
                 }
                 this.structureForm.setValue(bindFormData);
@@ -40,7 +40,7 @@ export class StructuresEditComponent implements OnInit {
     }
 
     saveStructure(): void {
-        let data = this.storageService.getItem('structure_data');
+        let data = this.storageService.getItem('structure_data') || [];
         if (this.id) {
             data.splice(this.id, 1, this.structureForm.getRawValue());
         } else {

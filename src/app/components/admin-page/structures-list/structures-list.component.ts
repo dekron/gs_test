@@ -19,7 +19,6 @@ export class StructuresListComponent implements OnInit {
     }
 
     ngOnInit() {
-
         this.dataSource.data = this.storageService.getItem('structure_data') || [];
     }
 

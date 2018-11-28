@@ -10,8 +10,9 @@
       </mat-form-field>
       <mat-form-field>
         <mat-select placeholder="Шаблон размещения" formControlName="template" required>
-          <mat-option value="0">Шаблон 1</mat-option>
-          <mat-option value="1">Шаблон 2</mat-option>
+          <mat-option value="TemplateOneToTwoComponent">Шаблон 1 к 2</mat-option>
+          <mat-option value="TemplateTwoToOneComponent">Шаблон 2 к 1</mat-option>
+          <mat-option value="TemplateThreeInOneComponent">Шаблон 3 в 1</mat-option>
         </mat-select>
         <mat-error *ngIf="structureForm.controls.template.invalid">{{getTemplateErrorMessage()}}</mat-error>
       </mat-form-field>
@@ -22,9 +23,9 @@
           <mat-form-field>
             <mat-label>Блок {{i + 1}}</mat-label>
             <mat-select formControlName="type">
-              <mat-option value="number">Блок с числом</mat-option>
-              <mat-option value="graph">Блок с графиком</mat-option>
-              <mat-option value="table">Блок с таблицей</mat-option>
+              <mat-option value="BlockNumberComponent">Блок с числом</mat-option>
+              <mat-option value="BlockGraphComponent">Блок с графиком</mat-option>
+              <mat-option value="BlockTableComponent">Блок с таблицей</mat-option>
             </mat-select>
             <mat-error *ngIf="blockGroup.controls.type.invalid">{{getBlocksErrorMessage(blockGroup.controls.type)}}
             </mat-error>

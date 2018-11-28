@@ -1,12 +1,12 @@
 export interface StructureElement {
     active: boolean
     name: string
-    template: number
+    template: string
     blocks: Block
 }
 
 export interface Block {
-    type: BlockType
+    type: string
     source: number
 }
 
@@ -29,10 +29,4 @@ export interface Connection {
 
 export enum SourceType {
     ws
-}
-
-export enum BlockType {
-    number = 'number',
-    graph = 'graph',
-    table = 'table'
 }

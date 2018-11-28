@@ -3,13 +3,13 @@ import {Block} from "../../../../models/structure-element.model";
 import {BlockService} from "../../blocks/block.service";
 
 @Component({
-    templateUrl: './template-two-to-one.component.html',
-    styleUrls: ['./template-two-to-one.component.css'],
+    templateUrl: './template-one-to-two.component.html',
+    styleUrls: ['./template-one-to-two.component.css'],
     providers: [
         BlockService
     ]
 })
-export class TemplateTwoToOneComponent {
+export class TemplateOneToTwoComponent {
     @ViewChild('blockPoint1', {read: ViewContainerRef}) blockPoint1: ViewContainerRef;
     @ViewChild('blockPoint2', {read: ViewContainerRef}) blockPoint2: ViewContainerRef;
     @ViewChild('blockPoint3', {read: ViewContainerRef}) blockPoint3: ViewContainerRef;

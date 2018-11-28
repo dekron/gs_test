@@ -4,6 +4,7 @@ import {SourceService} from "../../../../services/source/source.service";
 
 @Component({
     templateUrl: './block-number.component.html',
+    styleUrls: ['./block-number.component.css']
 })
 export class BlockNumberComponent {
     value: number;
